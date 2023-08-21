@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>madlibz</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class='madLibsEdit'>
-    </div>
-    <div class='madLibsPreview'>
-    </div>
+    <article id="game">
+      <!-- confetti effect -->
+      <canvas id="my-canvas" class="close"></canvas>
+      <div class="story">
+        <div class="madLibsEdit"></div>
+        <div class="madLibsPreview"></div>
+      </div>
+      <div class="actionBtns">
+        <button id="clearBtn">Clear all</button>
+        <button id="endBtn">The end</button>
+      </div>
+    </article>
+    <section id="about"></section>
+    <!-- scripts -->
+    <script src="home.js"></script>
+    <script src="splash.js"></script>
+    <script src="about.js"></script>
+    <script src="index.min.js"></script>
+    <script src="confetti.js"></script>
     <script src="do-not-touch.js"></script>
     <script src="madlibs.js"></script>
   </body>

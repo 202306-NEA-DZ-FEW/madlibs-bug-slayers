@@ -1,3 +1,445 @@
-/**
- * Your CSS goes here.
- */
+/* our css variables */
+:root {
+  --text-primary: #333;
+  --text-secondary: #33333360;
+  --primary: #ff6161;
+  --primary-light: #ff616150;
+  --secondary: #008080;
+  --background-primary: #fff;
+  --background-light: #d4f1f4;
+  --card-border-radius: 25px;
+  --card-title: 1.2rem;
+  --card-title-weight: 600;
+  --button-border-radius: 14px;
+  --title: 2.5rem;
+  --title-secondary: 1.8rem;
+  --heading-weight: 800;
+  --heading-secondary-weight: 400;
+  --paragraph: 1rem;
+  --paragraph-weight: 300;
+  --shadow: #00000010;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5rem;
+}
+body {
+  padding: 0;
+  margin: 0;
+  color: var(--text-primary);
+}
+body h1 {
+  line-height: 2.5rem;
+  font-size: var(--title);
+  font-weight: var(--heading-weight);
+}
+body h2 {
+  font-size: var(--title-secondary);
+  font-weight: var(--heading-secondary-weight);
+}
+
+/* splash screen design */
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 100;
+  color: white;
+  text-align: center;
+  display: grid;
+  place-content: center;
+}
+.splash.display-none {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: -100;
+  color: white;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.splash-content {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.splash-content h1 {
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.splash-content img {
+  width: 200px;
+  animation: fadeIn 1s ease-in forwards;
+}
+/* end of splash screen design */
+
+/* landing page desing */
+.landing-container {
+  min-height: 100vh;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+}
+.instructions {
+  flex: 1.2;
+  padding: 2rem;
+}
+.illustration {
+  flex: 1;
+  padding: 2rem;
+}
+.illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.instructions h1 {
+  margin-bottom: 3rem;
+}
+.instructions p {
+  margin-bottom: 2rem;
+  width: 80%;
+  font-weight: 300;
+}
+
+.instructions ol {
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--button-border-radius);
+  background-color: var(--primary);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--secondary);
+}
+/* end of landing page desing */
+
+#game {
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.madLibsEdit {
+  flex: 1;
+  padding: 2rem;
+  min-height: 55vh;
+  border-radius: 25px;
+  background-color: var(--background-light);
+  box-shadow: 3px 3px 10px var(--shadow);
+}
+
+.madLibsPreview {
+  flex: 1;
+  padding: 2rem;
+  min-height: 55vh;
+  border-radius: 25px;
+  background-color: var(--background-light);
+  box-shadow: 3px 3px 10px var(--shadow);
+}
+
+.actionBtns {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+input,
+mark {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 3px;
+  display: inline-block;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none;
+  background: none;
+  background-color: var(--primary-light);
+  margin: 0.1rem 0;
+}
+::placeholder {
+  color: var(--text-secondary);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--text-secondary);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--text-secondary);
+}
+mark {
+  min-width: 10ch;
+  color: var(--text-secondary);
+}
+input {
+  width: 10ch;
+}
+span {
+  margin: 0.1rem 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.filled {
+  background-color: var(--secondary);
+  color: white;
+}
+
+/*scrollbar styling*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 5px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+/*End of scrollbar styling*/
+
+/* Confetti */
+
+.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.close {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
+  transition: all 0.5s;
+  display: none;
+}
+
+/*About page*/
+#about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+  background-color: var(--background-light);
+  padding-bottom: 2rem;
+}
+
+#about h1 {
+  margin-bottom: 2rem;
+}
+.about-us {
+  text-align: center;
+  max-width: 65%;
+}
+
+.about-us p {
+  font-size: 1rem;
+  font-weight: 200;
+}
+.copy {
+  font-size: 1rem;
+  font-weight: 200;
+  text-align: center;
+}
+
+.cards {
+  max-width: 1080px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 260px;
+  border-radius: var(--card-border-radius);
+  background-color: var(--background-primary);
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 10px var(--shadow);
+  cursor: pointer;
+}
+
+.card:hover {
+  scale: 1.1;
+  box-shadow: 3px 3px 50px var(--shadow);
+}
+
+.card-image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+}
+
+.card-image .card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.card-content {
+  text-align: center;
+  padding: 1rem;
+}
+
+.card-content i {
+  font-size: 2rem;
+  color: var(--primary);
+  cursor: pointer;
+  margin: 0.2rem;
+  transition: all 0.3s ease;
+}
+
+.card-content h3 {
+  font-size: var(--card-title);
+  font-weight: var(--card-title-weight);
+}
+
+.card-content i:hover {
+  color: var(--secondary);
+  scale: 1.1;
+}
+
+.image-content {
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  top: -1;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--card-border-radius) var(--card-border-radius) 0
+    var(--card-border-radius);
+  background-color: var(--secondary);
+}
+
+.overlay::before,
+.overlay::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: var(--secondary);
+}
+
+.overlay::after {
+  border-radius: 0 var(--card-border-radius) 0 0;
+  background-color: var(--background-primary);
+}
+/*End of About page*/
+
+/* responsive design */
+@media screen and (max-width: 920px) {
+  .landing-container {
+    padding: 2rem;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .instructions {
+    text-align: center;
+  }
+  .instructions p {
+    width: 100%;
+  }
+  .instructions ol {
+    text-align: left;
+  }
+  .story {
+    flex-direction: column;
+  }
+  #game {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .landing-container {
+    padding: 0;
+  }
+  .instructions h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+  .instructions h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+}

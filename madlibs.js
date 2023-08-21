@@ -84,6 +84,7 @@ function createPos(word, previewContainer, editContainer) {
       }
     } else {
       input.classList.remove("filled");
+      input.style.width = 10 + "ch";
       output.classList.remove("filled");
       output.innerText = `[${word.pos}]`;
     }
@@ -121,6 +122,7 @@ function renderStoryToDOM(processedStory) {
   clearButton.addEventListener("click", () => {
     for (let i = 0; i < inputFields.length; i++) {
       inputFields[i].value = "";
+      inputFields[i].style.width = 10 + "ch";
       outputs[i].innerText = inputFields[i].placeholder;
       inputFields[i].classList.remove("filled");
       outputs[i].classList.remove("filled");
